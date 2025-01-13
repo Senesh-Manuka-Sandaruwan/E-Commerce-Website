@@ -7,9 +7,9 @@
     <title>Crunchy Sweet | Home</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./js/home.js" defer></script>
+    <script src="js/home.js" defer></script>
     <style>
-        
+
     </style>
 </head>
 
@@ -31,8 +31,8 @@
                 Us</a>
         </nav>
         <div class="flex space-x-6">
-            <img src="assets/user-fill.png" alt="User Icon" class="w-6 h-6">
-            <img src="assets/shopping-cart-fill.png" alt="Cart Icon" class="w-6 h-6">
+            <a href="login.php"><img src="assets/user-fill.png" alt="User Icon" class="w-8 h-8"></a>
+            <a href="cart.php"><img src="assets/shopping-cart-fill.png" alt="Cart Icon" class="w-8 h-8"></a>
         </div>
     </header>
 
@@ -46,41 +46,50 @@
             <!-- Cakes Section -->
             <h2 class="text-3xl font-bold mb-6 text-gray-700">Cakes</h2>
             <div class="flex items-center space-x-6">
-                
+
                 <div class="grid grid-cols-4 gap-20">
                     <div class="text-center">
-                        <img src="assets/regular_cake_1.webp" alt="Regular Cakes"
-                            class="w-64 h-64 rounded-lg shadow transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <a href="cakeProducts.php"><img src="assets/regular_cake_1.webp" alt="Regular Cakes"
+                                class="w-64 h-64 rounded-lg shadow transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></a>
                         <p class="mt-4 text-gray-600 font-medium">Regular cakes</p>
                     </div>
                     <div class="text-center">
-                        <img src="assets/gourmet_cake_0.webp" alt="Gourmet Cakes"
-                            class="w-64 h-64 rounded-lg shadow transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <a href="cakeProducts.php"><img src="assets/gourmet_cake_0.webp" alt="Gourmet Cakes"
+                                class="w-64 h-64 rounded-lg shadow transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></a>
                         <p class="mt-4 text-gray-600 font-medium">Gourmet cakes</p>
                     </div>
                     <div class="text-center">
-                        <img src="assets/Coffee-Gateau.png" alt="Gateaux Cakes"
-                            class="w-64 h-64 rounded-lg shadow transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <a href="cakeProducts.php"><img src="assets/Coffee-Gateau.png" alt="Gateaux Cakes"
+                                class="w-64 h-64 rounded-lg shadow transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></a>
                         <p class="mt-4 text-gray-600 font-medium">Gateaux cakes</p>
                     </div>
                     <div class="text-center">
-                        <img src="assets/normal-cakes.jpg" alt="Normal Cakes"
-                            class="w-64 h-64 rounded-lg shadow transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <a href="cakeProducts.php"><img src="assets/normal-cakes.jpg" alt="Normal Cakes"
+                                class="w-64 h-64 rounded-lg shadow transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></a>
                         <p class="mt-4 text-gray-600 font-medium">Normal cakes</p>
                     </div>
                 </div>
             </div>
-
             <!-- Sweets Section -->
             <h2 class="text-3xl font-bold mb-6 mt-16 text-gray-700">Sweets</h2>
             <div class="flex items-center justify-between">
                 <button id="prevBtn" class="bg-gray-200 p-3 rounded-full text-gray-700"
-                    onclick="changePage(-1)">&lt;</button>
-                <div id="itemContainer" class="grid grid-cols-4 gap-6">
-                </div>
+                    onclick="changePage(-1, 'sweets')">&lt;</button>
+                <div id="itemContainerSweets" class="grid grid-cols-4 gap-6"></div>
                 <button id="nextBtn" class="bg-gray-200 p-3 rounded-full text-gray-700"
-                    onclick="changePage(1)">&gt;</button>
+                    onclick="changePage(1, 'sweets')">&gt;</button>
             </div>
+
+            <!-- Chocolates Section -->
+            <h2 class="text-3xl font-bold mb-6 mt-16 text-gray-700">Chocolates</h2>
+            <div class="flex items-center justify-between">
+                <button id="prevBtnChocolate" class="bg-gray-200 p-3 rounded-full text-gray-700"
+                    onclick="changePage(-1, 'chocolate')">&lt;</button>
+                <div id="itemContainerChocolate" class="grid grid-cols-4 gap-6"></div>
+                <button id="nextBtnChocolate" class="bg-gray-200 p-3 rounded-full text-gray-700"
+                    onclick="changePage(1, 'chocolate')">&gt;</button>
+            </div>
+
         </section>
     </main>
 

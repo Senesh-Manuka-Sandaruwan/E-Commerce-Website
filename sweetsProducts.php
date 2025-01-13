@@ -4,7 +4,7 @@
 
 if (isset($_POST['add_to_cart'])) {
 
-    $product_name = $_POST['product_name'];
+    $product_name = $_POST['sub_product_name'];
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
     $product_quantity = 1;
@@ -12,7 +12,7 @@ if (isset($_POST['add_to_cart'])) {
     $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name'");
 
     if (mysqli_num_rows($select_cart) > 0) {
-        $message[] = 'Product already added to cart';
+        // $message[] = '';
     } else {
         $insert_product = mysqli_query($conn, "INSERT INTO `cart`(name, price, image, quantity) VALUES('$product_name', '$product_price', '$product_image', '$product_quantity')");
         $message[] = 'Product added to cart successfully';
@@ -58,26 +58,48 @@ if (isset($_POST['add_to_cart'])) {
                 Us</a>
         </nav>
         <div class="flex space-x-6">
-            <img src="assets/user-fill.png" alt="User Icon" class="w-6 h-6">
-            <img src="assets/shopping-cart-fill.png" alt="Cart Icon" class="w-6 h-6">
+            <a href="login.php"><img src="assets/user-fill.png" alt="User Icon" class="w-8 h-8"></a>
+            <?php
+            $select_rows = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
+            $row_count = mysqli_num_rows($select_rows);
+            ?>
+            <a href="cart.php"
+                class="cart relative flex items-center space-x-2 text-2xl text-white hover:text-yellow-400 ml-8">
+                <img src="assets/shopping-cart-fill.png" alt="Shopping Cart Icon" class="w-8 h-8" />
+                <span
+                    class="absolute top-0 right-0 bg-white text-blue-500 text-xs font-semibold px-1 py-0.5 rounded-full">(<?php echo $row_count; ?>)</span>
+            </a>
         </div>
     </header>
 
     <main>
-        <?php
+    <?php if (isset($message)) { ?>
+            <div id="alert-container" class="fixed top-5 right-5 z-50 space-y-4">
+                <?php foreach ($message as $msg) { ?>
+                    <div class="bg-green-500 text-white px-4 py-2 rounded shadow-lg flex items-center justify-between max-w-md opacity-100 animate-fadeIn"
+                        data-disappear>
+                        <span><?php echo htmlspecialchars($msg); ?></span>
+                        <i class="fas fa-times cursor-pointer ml-4" onclick="this.parentElement.style.display = 'none';"></i>
+                    </div>
+                <?php } ?>
+            </div>
 
-        if (isset($message)) {
-            foreach ($message as $message) {
-                echo '<div class="bg-green-500 text-white px-4 py-2 rounded shadow-lg mb-4 flex items-center justify-between max-w-md mx-auto">
-               <span>' . $message . '</span>
-               <i class="fas fa-times cursor-pointer" onclick="this.parentElement.style.display = `none`;"></i>
-            </div>';
-            }
-            ;
-        }
-        ;
+            <script>
 
-        ?>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const messages = document.querySelectorAll('[data-disappear]');
+                    messages.forEach((msg) => {
+                        setTimeout(() => {
+                            msg.classList.add('animate-slideOut');
+                            setTimeout(() => {
+                                msg.remove(); 
+                            }, 500); 
+                        }, 2500); 
+                    });
+                });
+            </script>
+        <?php } ?>
+
         <div class="bg-gray-100 py-10">
             <div class="max-w-screen-xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-8">
                 <!-- Left Side: Image -->
@@ -132,13 +154,13 @@ if (isset($_POST['add_to_cart'])) {
                                             <div class="box">
                                                 <img src="./controllers/uploaded_img/<?php echo htmlspecialchars($fetch_product['product_image']); ?>"
                                                     alt="Product Image" class="w-full h-64 object-cover rounded-md mb-4">
-                                                <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                                <h3 class="text-l font-semibold text-gray-800 mb-2">
                                                     <?php echo $fetch_product['sub_product_name']; ?>
                                                 </h3>
                                                 <div class="text-lg font-bold text-gray-900 mb-4">
                                                     LKR.<?php echo $fetch_product['product_price']; ?>/-</div>
-                                                <input type="hidden" name="product_name"
-                                                    value="<?php echo $fetch_product['product_name']; ?>">
+                                                <input type="hidden" name="sub_product_name"
+                                                    value="<?php echo $fetch_product['sub_product_name']; ?>">
                                                 <input type="hidden" name="product_price"
                                                     value="<?php echo $fetch_product['product_price']; ?>">
                                                 <input type="hidden" name="product_image"

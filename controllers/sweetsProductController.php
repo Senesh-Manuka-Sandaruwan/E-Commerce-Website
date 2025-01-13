@@ -103,7 +103,9 @@ if (isset($message)) {
             <option value="Brownies">Brownies</option>
             <option value="Cup Cakes">Cup Cakes</option>
             <option value="Eclairs">Eclairs</option>
+            <option value="Pastries">Pastries</option>
             <option value="Muffins">Muffins</option>
+            <option value="Jar Cakes">Jar Cakes</option>
          </select>
          <input type="text" placeholder="Enter sub product name" name="sub_product_name" 
             class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">

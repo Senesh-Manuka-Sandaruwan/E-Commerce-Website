@@ -102,7 +102,9 @@ if (isset($message)) {
             <option value="Brownies">Brownies</option>
             <option value="Cup Cakes">Cup Cakes</option>
             <option value="Eclairs">Eclairs</option>
+            <option value="Pastries">Pastries</option>
             <option value="Muffins">Muffins</option>
+            <option value="Jar Cakes">Jar Cakes</option>
          </select>
       <input type="text" name="sub_product_name" value="<?php echo $row['sub_product_name']; ?>" 
          placeholder="Enter the sub product name" 

@@ -58,10 +58,14 @@
     </header>
 
 
-    <div class="relative bg-cover bg-center h-96 flex items-center justify-center text-white text-4xl font-bold"
-        style="background-image: url('https://via.placeholder.com/1500x500');">
-        GET IN TOUCH
-    </div>
+    <section class="relative w-full h-auto">
+            <img src="assets/CONUS.jpg" alt="Background Image" class="w-full object-cover">
+            <div class="absolute bottom-4 left-4">
+                <h1 class="text-white text-xl md:text-9xl font-bold drop-shadow-lg">
+                GET IN TOUCH
+                </h1>
+            </div>
+        </section>
 
 
     <section class="px-8 py-12 max-w-7xl mx-auto grid grid-cols-2 gap-8">
@@ -80,7 +84,7 @@
         </div>
 
         <div>
-            <img src="https://via.placeholder.com/800x600" alt="Contact Us Image" class="w-full rounded">
+            <img src="assets/CONUS2.jpg" alt="Contact Us Image" class="w-full rounded">
         </div>
     </section>
 

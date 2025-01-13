@@ -104,6 +104,10 @@ if (isset($message)) {
             <option value="KitKat Chocolates">KitKat Chocolates</option>
             <option value="Mars Chocolates">Mars Chocolates</option>
             <option value="Twix Chocolates">Twix Chocolates</option>
+            <option value="Twix Chocolates">Snickers Chocolates</option>
+            <option value="Twix Chocolates">Milka Chocolate</option>
+            <option value="Twix Chocolates">Ferrero Rocher Chocolate</option>
+            <option value="Twix Chocolates">Toblerone Chocolate</option>
          </select>
       <input type="text" name="sub_product_name" value="<?php echo $row['sub_product_name']; ?>" 
          placeholder="Enter the sub product name" 

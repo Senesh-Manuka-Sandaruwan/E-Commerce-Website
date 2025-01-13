@@ -53,48 +53,113 @@
                 Us</a>
         </nav>
         <div class="flex space-x-6">
-            <img src="assets\user-fill.png" alt="User Icon" class="w-6 h-6">
-            <img src="assets\shopping-cart-fill.png" alt="Cart Icon" class="w-6 h-6">
+            <a href="login.php"><img src="assets\user-fill.png" alt="User Icon" class="w-8 h-8"></a>
+            <a href="cart.php"></a><img src="assets\shopping-cart-fill.png" alt="Cart Icon" class="w-8 h-8"></a>
         </div>
     </header>
     <main>
 
 
-        <div class="relative bg-cover bg-center h-96 flex items-center justify-center text-white text-4xl font-bold"
-            style="background-image: url('https://via.placeholder.com/1500x500');">
-            ABOUT
-        </div>
-
-        <section class="px-8 py-12 max-w-7xl mx-auto">
-            <p class="text-lg leading-relaxed">
-                The realm of crunchy sweets is a delightful blend of sweet flavors and satisfying textures. This
-                category encompasses a wide range of treats, from classic candies to innovative snacks. To thrive in
-                this competitive market, entrepreneurs must prioritize product innovation, quality assurance, effective
-                marketing, and strategic distribution. Experimenting with unique flavors, novel textures, and healthier
-                alternatives can help differentiate products and attract a wider audience.
-            </p>
-
-            <p class="text-lg leading-relaxed mt-4">
-                To ensure success, businesses must maintain strict hygiene standards, source high-quality ingredients,
-                and implement rigorous quality control measures. Effective marketing strategies, including social media
-                campaigns and influencer partnerships, can help build brand awareness and drive sales. Additionally,
-                understanding consumer trends, embracing sustainable practices, and adapting to changing market
-                conditions are crucial for long-term success in the crunchy sweets industry.
-            </p>
-
-            <img src="https://via.placeholder.com/800x400" alt="Bakery Items" class="w-full mt-6">
+        <section class="relative w-full h-auto">
+            <img src="assets/image 11.png" alt="Background Image" class="w-full object-cover">
+            <div class="absolute bottom-4 left-4">
+                <h1 class="text-white text-xl md:text-9xl font-bold drop-shadow-lg">
+                    ABOUT
+                </h1>
+            </div>
         </section>
 
-        <section class="py-12 px-8">
-            <h2 class="text-2xl font-bold mb-4">Food Safety Policy</h2>
-            <p class="text-lg leading-relaxed">
-                We at Crunchy Sweets (Pvt) Ltd, strive to be recognized as a manufacturing best quality cakes, gateaux,
-                pastries, bakery products, ready to eat meals, beverages & providing outdoor catering services.
+
+        <section class="px-8 py-12 max-w-7xl mx-auto">
+            <p>
+                The crunchy sweets industry is a vibrant and evolving sector that thrives on creativity and consumer
+                engagement. This category encompasses an array of delightful treats, from traditional confections to
+                innovative snacks that cater to a broad spectrum of tastes. Success in this industry hinges on a strong
+                focus on innovation, ensuring that products stand out in a crowded marketplace. Unique flavor
+                combinations, innovative textures, and the introduction of health-conscious alternatives like low-sugar
+                or gluten-free options can attract a diverse customer base and set a brand apart from its competitors.
             </p>
-            <p class="text-lg leading-relaxed mt-4">
-                Food Safety Management System is implemented with the support of appropriate documentation and records.
-                All identified hazards are controlled through the implementation of hygiene control operations and HACCP
-                plans, conforming to statutory and regulatory requirements.
+            <br></br>
+            <p>
+                Quality assurance is another cornerstone of the crunchy sweets business. Consumers expect consistent
+                taste and texture, and any compromise can harm a brand’s reputation. To ensure quality, businesses must
+                prioritize the use of premium ingredients, maintain strict hygiene standards, and implement
+                comprehensive quality control processes throughout the production and distribution stages.
+                Certifications for safety and quality, such as ISO or HACCP, can enhance consumer trust and provide a
+                competitive edge in a discerning market.
+            </p>
+            <br></br>
+            <p>
+                Marketing plays a critical role in the success of crunchy sweets. Leveraging digital platforms such as
+                social media and e-commerce sites allows brands to reach a broader audience and engage with customers on
+                a personal level. Social media campaigns, influencer partnerships, and user-generated content can
+                significantly boost visibility and drive sales. Seasonal promotions and limited-edition products tied to
+                holidays or cultural events can also generate excitement and create a sense of urgency among consumers,
+                leading to increased demand.Sustainability is becoming a key consideration for businesses in this
+                industry. Environmentally conscious consumers are more likely to support brands that embrace
+                eco-friendly practices, such as using
+                biodegradable packaging, reducing food waste, and sourcing ethically produced ingredients. Incorporating
+                sustainability into the business model not only appeals to this growing demographic but also positions
+                the brand as a socially responsible entity. Long-term benefits include cost savings, enhanced brand
+                loyalty, and a positive environmental impact.
+
+            </p>
+            <br></br>
+            <p>
+                Technology is reshaping the crunchy sweets industry in multiple ways. Automation in production processes
+                helps achieve consistency, reduce costs, and improve efficiency. Advanced technologies like data
+                analytics enable businesses to better understand consumer preferences and trends, leading to more
+                targeted product offerings and marketing strategies. Augmented and virtual reality experiences, such as
+                interactive packaging or online tasting events, add a new dimension to customer engagement, appealing to
+                tech-savvy audiences and enhancing the overall brand experience.Globalization has opened new horizons
+                for the crunchy sweets industry, presenting opportunities for
+                international growth. Expanding into global markets requires a nuanced understanding of local consumer
+                preferences, dietary habits, and regulatory environments. Brands that successfully tailor their products
+                to meet the needs of different regions can tap into diverse markets and achieve significant growth.
+                Collaborating with local distributors, creating region-specific marketing campaigns, and ensuring
+                compliance with local regulations are critical steps in establishing a strong foothold in global
+                markets. This approach not only diversifies revenue streams but also builds a resilient business capable
+                of adapting to global trends.
+            </p>
+
+        </section>
+
+        <div class="relative w-full h-auto">
+            <img src="assets/image 24.png" alt="Bakery Items" class="w-full object-cover">
+        </div>
+
+        <section class="py-12 px-8">
+            <h2 class="text-4xl font-bold mb-6 flex items-center justify-center">Food Safety Policy</h2>
+            <p>
+                Crunchy Sweets (Pvt) Ltd takes pride in delivering high-quality culinary creations that encompass a
+                diverse range of products.
+                From artisanal cakes and delicate gateaux to savory ready-to-eat meals and refreshing beverages, the
+                company’s portfolio is designed to cater to a
+                variety of tastes and occasions. Its outdoor catering services further enhance its offerings, providing
+                customized solutions for events of all sizes,
+                ensuring memorable experiences for its clients. This commitment to diversity and quality enables Crunchy
+                Sweets to establish itself as a trusted name
+                in the food and beverage industry.
+            </p>
+            <br></br>
+            <p>
+                A robust Food Safety Management System (FSMS) forms the backbone of Crunchy Sweets' operations, ensuring
+                the highest levels of safety and hygiene. By adhering to globally recognized standards such as HACCP
+                (Hazard Analysis and Critical Control Points), the company identifies and mitigates potential hazards
+                throughout its production and supply chain processes. Comprehensive documentation and meticulous
+                record-keeping provide a transparent framework that supports regulatory compliance and builds consumer
+                trust. These practices underscore the company’s dedication to safeguarding the health and well-being of
+                its customers.
+            </p>
+            <br></br>
+            <p>
+                In addition to food safety, Crunchy Sweets places a strong emphasis on maintaining operational
+                excellence and sustainability. By aligning its processes with statutory and regulatory requirements, the
+                company not only ensures the safety of its products but also positions itself as a responsible corporate
+                entity. Continuous improvement initiatives, such as staff training and technological advancements, are
+                integral to its strategy, enhancing productivity and quality. This approach not only fortifies the
+                company’s market position but also reflects its commitment to delivering exceptional value while meeting
+                the evolving needs of its customers.
             </p>
         </section>
 
