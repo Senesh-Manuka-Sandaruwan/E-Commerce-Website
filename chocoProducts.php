@@ -30,7 +30,7 @@ if (isset($_POST['add_to_cart'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crunchy Sweet | Product</title>
+    <title>Crunchy Sweet | Chocolate Product</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/home.js" defer></script>
@@ -82,7 +82,7 @@ if (isset($_POST['add_to_cart'])) {
    <div class="max-w-screen-xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-8">
       <!-- Left Side: Image -->
       <div class="w-full lg:w-1/2">
-         <img src="path/to/your/image.jpg" alt="Descriptive Image" class="w-full h-auto rounded-lg shadow-lg">
+         <img src="assets/istockphoto-1276645382-612x612.jpg" alt="Descriptive Image" class="w-full h-auto rounded-lg shadow-lg">
       </div>
 
       <!-- Right Side: Paragraph -->
@@ -130,7 +130,7 @@ if (isset($_POST['add_to_cart'])) {
                   <img src="./controllers/uploaded_img/<?php echo htmlspecialchars($fetch_product['product_image']); ?>" 
                      alt="Product Image" class="w-full h-64 object-cover rounded-md mb-4">
                   <h3 class="text-xl font-semibold text-gray-800 mb-2"><?php echo $fetch_product['sub_product_name']; ?></h3>
-                  <div class="text-lg font-bold text-gray-900 mb-4">$<?php echo $fetch_product['product_price']; ?>/-</div>
+                  <div class="text-lg font-bold text-gray-900 mb-4">LKR.<?php echo $fetch_product['product_price']; ?>/-</div>
                   <input type="hidden" name="product_name" value="<?php echo $fetch_product['product_name']; ?>">
                   <input type="hidden" name="product_price" value="<?php echo $fetch_product['product_price']; ?>">
                   <input type="hidden" name="product_image" value="<?php echo $fetch_product['product_image']; ?>">

@@ -98,9 +98,13 @@ if (isset($message)) {
    <form action="" method="post" enctype="multipart/form-data" 
       class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
       <h3 class="text-2xl font-semibold text-center mb-4 uppercase text-gray-800">Update the Choco Product</h3>
-      <input type="text" name="product_name" value="<?php echo $row['product_name']; ?>" 
-         placeholder="Enter the product name" 
-         class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+      <select name="product_name" 
+            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option value="Dairy Milk Chocolates">Dairy Milk Chocolates</option>
+            <option value="KitKat Chocolates">KitKat Chocolates</option>
+            <option value="Mars Chocolates">Mars Chocolates</option>
+            <option value="Twix Chocolates">Twix Chocolates</option>
+         </select>
       <input type="text" name="sub_product_name" value="<?php echo $row['sub_product_name']; ?>" 
          placeholder="Enter the sub product name" 
          class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">

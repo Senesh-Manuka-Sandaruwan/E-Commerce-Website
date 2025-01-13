@@ -98,8 +98,13 @@ if (isset($message)) {
       <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data" 
          class="bg-gray-100 p-6 rounded-lg shadow-md w-full max-w-md">
          <h3 class="text-2xl font-semibold text-center mb-4 uppercase text-gray-800">Add a New Chocolate Product</h3>
-         <input type="text" placeholder="Enter product name" name="product_name" 
+         <select name="product_name" 
             class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option value="Dairy Milk Chocolates">Dairy Milk Chocolates</option>
+            <option value="KitKat Chocolates">KitKat Chocolates</option>
+            <option value="Mars Chocolates">Mars Chocolates</option>
+            <option value="Twix Chocolates">Twix Chocolates</option>
+         </select>
          <input type="text" placeholder="Enter sub product name" name="sub_product_name" 
             class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
          <input type="number" placeholder="Enter product price" name="product_price" 
@@ -138,7 +143,7 @@ if (isset($message)) {
                </td>
                <td class="border border-gray-300 px-4 py-2"><?php echo $row['product_name']; ?></td>
                <td class="border border-gray-300 px-4 py-2"><?php echo $row['sub_product_name']; ?></td>
-               <td class="border border-gray-300 px-4 py-2">Rs.<?php echo $row['product_price']; ?>/-</td>
+               <td class="border border-gray-300 px-4 py-2">LKR.<?php echo $row['product_price']; ?>/-</td>
                <td class="border border-gray-300 px-4 py-2 space-x-2">
                   <a href="chocoProductController.php?delete=<?php echo $row['id']; ?>" 
                      class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Delete</a>

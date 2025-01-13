@@ -50,7 +50,7 @@ if (isset($_GET['edit'])) {
         $upload = mysqli_query($conn, $update);
 
         if ($upload) {
-            header('location:ProductController.php');
+            header('location:cakeProductController.php');
         } else {
             $message[] = 'Failed to update the product';
         }
@@ -66,6 +66,9 @@ if (isset($_GET['edit'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>admin | Update Cake Page</title>
+
+
    <link rel="stylesheet" href="css/style.css">
    <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -94,10 +97,14 @@ if (isset($message)) {
    <div class="flex justify-center items-center min-h-screen bg-gray-50 p-4">
    <form action="" method="post" enctype="multipart/form-data" 
       class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-      <h3 class="text-2xl font-semibold text-center mb-4 uppercase text-gray-800">Update the Product</h3>
-      <input type="text" name="product_name" value="<?php echo $row['product_name']; ?>" 
-         placeholder="Enter the product name" 
-         class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+      <h3 class="text-2xl font-semibold text-center mb-4 uppercase text-gray-800">Update the Cake Product</h3>
+      <select name="product_name" 
+            class="flex w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option value="Regular Cakes">Regular Cakes</option>
+            <option value="Gourmet Cakes">Gourmet Cakes</option>
+            <option value="Gateaux Cakes">Gateaux Cakes</option>
+            <option value="Normal Cakes">Normal Cakes</option>
+         </select>
       <input type="text" name="sub_product_name" value="<?php echo $row['sub_product_name']; ?>" 
          placeholder="Enter the sub product name" 
          class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
@@ -108,7 +115,7 @@ if (isset($message)) {
          class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none">
       <input type="submit" value="Update Product" name="update_product" 
          class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 cursor-pointer">
-      <a href="ProductController.php" 
+      <a href="cakeProductController.php" 
          class="block mt-4 text-center bg-gray-500 text-white py-2 rounded-lg hover:bg-gray-600">Go Back</a>
    </form>
 </div>

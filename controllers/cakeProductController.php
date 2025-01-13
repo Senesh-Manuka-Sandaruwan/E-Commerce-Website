@@ -54,7 +54,7 @@ if (isset($_GET['delete'])) {
        if (file_exists($image_file)) {
            unlink($image_file);
        }
-       header('location:ProductController.php');
+       header('location:cakeProductController.php');
    } else {
        echo "Failed to delete the product!";
    }
@@ -70,7 +70,7 @@ if (isset($_GET['delete'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>admin | Cake Page</title>
+   <title>admin | Add Cake Page</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -98,8 +98,13 @@ if (isset($message)) {
       <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data" 
          class="bg-gray-100 p-6 rounded-lg shadow-md w-full max-w-md">
          <h3 class="text-2xl font-semibold text-center mb-4 uppercase text-gray-800">Add a New Cake Product</h3>
-         <input type="text" placeholder="Enter product name" name="product_name" 
+         <select name="product_name" 
             class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option value="Regular Cakes">Regular Cakes</option>
+            <option value="Gourmet Cakes">Gourmet Cakes</option>
+            <option value="Gateaux Cakes">Gateaux Cakes</option>
+            <option value="Normal Cakes">Normal Cakes</option>
+         </select>
          <input type="text" placeholder="Enter sub product name" name="sub_product_name" 
             class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
          <input type="number" placeholder="Enter product price" name="product_price" 
@@ -138,11 +143,11 @@ if (isset($message)) {
                </td>
                <td class="border border-gray-300 px-4 py-2"><?php echo $row['product_name']; ?></td>
                <td class="border border-gray-300 px-4 py-2"><?php echo $row['sub_product_name']; ?></td>
-               <td class="border border-gray-300 px-4 py-2">Rs.<?php echo $row['product_price']; ?>/-</td>
+               <td class="border border-gray-300 px-4 py-2">LKR.<?php echo $row['product_price']; ?>/-</td>
                <td class="border border-gray-300 px-4 py-2 space-x-2">
-                  <a href="ProductController.php?delete=<?php echo $row['id']; ?>" 
+                  <a href="cakeProductController.php?delete=<?php echo $row['id']; ?>" 
                      class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Delete</a>
-                  <a href="updateProduct.php?edit=<?php echo $row['id']; ?>" 
+                  <a href="updateCakeProduct.php?edit=<?php echo $row['id']; ?>" 
                      class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Edit</a>
                </td>
             </tr>

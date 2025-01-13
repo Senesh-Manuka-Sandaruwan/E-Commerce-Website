@@ -21,14 +21,14 @@ if (isset($_GET['edit'])) {
  
  if (isset($_POST['update_product'])) {
     $product_name = $_POST['product_name'];
+    $sub_product_name = $_POST['sub_product_name'];
     $product_price = $_POST['product_price'];
-    $product_price = $_POST['sub_product_name'];
     $product_image = $_FILES['product_image']['name'];
     $product_image_tmp_name = $_FILES['product_image']['tmp_name'];
     $product_image_folder = 'uploaded_img/' . $product_image;
 
-    if (empty($product_name) || empty($sub_product_name) || empty($sub_product_name) || empty($product_price)) {
-        $message[] = 'Please fill out all fields!';
+    if (empty($product_name) && empty($sub_product_name) && empty($product_price) && empty($product_image)) {
+        $message[] = 'Please fill out atleast one field!';
     } else {
         if (!empty($product_image)) {
             // Validate and update with a new image
@@ -95,9 +95,15 @@ if (isset($message)) {
    <form action="" method="post" enctype="multipart/form-data" 
       class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
       <h3 class="text-2xl font-semibold text-center mb-4 uppercase text-gray-800">Update the Sweets Product</h3>
-      <input type="text" name="product_name" value="<?php echo $row['product_name']; ?>" 
-         placeholder="Enter the product name" 
-         class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+      <select name="product_name" 
+            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option value="Donuts">Donuts</option>
+            <option value="Cookies">Cookies</option>
+            <option value="Brownies">Brownies</option>
+            <option value="Cup Cakes">Cup Cakes</option>
+            <option value="Eclairs">Eclairs</option>
+            <option value="Muffins">Muffins</option>
+         </select>
       <input type="text" name="sub_product_name" value="<?php echo $row['sub_product_name']; ?>" 
          placeholder="Enter the sub product name" 
          class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
