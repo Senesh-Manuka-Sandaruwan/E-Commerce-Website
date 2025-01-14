@@ -93,6 +93,9 @@ if (isset($message)) {
 ?>
 </script>
 
+
+<?php include '../header.php'; ?>
+
 <div class="container mx-auto p-4">
    <div class="flex justify-center mt-10">
       <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data" 

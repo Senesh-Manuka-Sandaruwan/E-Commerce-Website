@@ -95,16 +95,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <nav class="space-x-10">
             <a href="index.php"
                 class="text-gray-800 font-medium hover:text-black border-b-2 border-transparent hover:border-black">Home</a>
-            <a href="products.php"
-                class="text-gray-800 font-medium hover:text-black border-b-2 border-transparent hover:border-black">Product</a>
+            <div class="relative inline-block">
+                <button id="dropdownButton"
+                    class="text-gray-800 font-medium hover:text-black border-b-2 border-transparent flex justify-between items-center w-full">
+                    <span>All Product</span>
+                    <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="dropdownMenu" class="absolute hidden mt-2 bg-white rounded shadow-lg z-10 w-48">
+                    <a href="cakeProducts.php"
+                        class="block px-4 py-2 text-black hover:bg-amber-100 hover:text-black">Cakes Products</a>
+                    <a href="sweetsProducts.php"
+                        class="block px-4 py-2 text-black hover:bg-amber-100 hover:text-black">Sweets Products</a>
+                    <a href="chocoProducts.php"
+                        class="block px-4 py-2 text-black hover:bg-amber-100 hover:text-black">Chocolate Products</a>
+                </div>
+            </div>
             <a href="about.php"
                 class="text-gray-800 font-medium hover:text-black border-b-2 border-transparent hover:border-black">About</a>
             <a href="contact.php"
-                class="text-gray-800 font-medium hover:text-black border-b-2 border-transparent hover:border-black">Contact Us</a>
+                class="text-gray-800 font-medium hover:text-black border-b-2 border-transparent hover:border-black">Contact
+                Us</a>
         </nav>
         <div class="flex space-x-6">
-            <img src="assets/user-fill.png" alt="User Icon" class="w-6 h-6">
-            <img src="assets/shopping-cart-fill.png" alt="Cart Icon" class="w-6 h-6">
+            <a href="login.php"><img src="assets/user-fill.png" alt="User Icon" class="w-6 h-6"></a>
+            <?php
+            $select_rows = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
+            $row_count = mysqli_num_rows($select_rows);
+            ?>
+            <a href="cart.php"
+                class="cart relative flex items-center space-x-2 text-2xl text-white hover:text-yellow-400 ml-8">
+                <img src="assets/shopping-cart-fill.png" alt="Shopping Cart Icon" class="w-8 h-8" />
+                <span
+                class="absolute top-0 right-0 bg-amber-900 text-white text-xs font-semibold px-1 py-0.5 rounded-full"><?php echo $row_count; ?></span>
+            </a>
         </div>
     </header>
 
@@ -116,41 +142,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div>
                     <label for="firstname" class="block text-black font-bold">First Name</label>
                     <input type="text" name="firstname" id="firstname" placeholder="First Name"
-                        class="w-full mt-2 px-4 py-2 border rounded-lg focus:ring focus:ring-amber-300 outline-none" required>
+                        class="w-full mt-2 px-4 py-2 border rounded-lg focus:ring focus:ring-amber-300 outline-none"
+                        required>
                 </div>
                 <div>
                     <label for="lastname" class="block text-black font-bold">Last Name</label>
                     <input type="text" name="lastname" id="lastname" placeholder="Last Name"
-                        class="w-full mt-2 px-4 py-2 border rounded-lg focus:ring focus:ring-amber-300 outline-none" required>
+                        class="w-full mt-2 px-4 py-2 border rounded-lg focus:ring focus:ring-amber-300 outline-none"
+                        required>
                 </div>
                 <div>
                     <label for="contactnumber" class="block text-black font-bold">Contact Number</label>
                     <input type="text" name="contactnumber" id="contactnumber" placeholder="Contact Number"
-                        class="w-full mt-2 px-4 py-2 border rounded-lg focus:ring focus:ring-amber-300 outline-none" required>
+                        class="w-full mt-2 px-4 py-2 border rounded-lg focus:ring focus:ring-amber-300 outline-none"
+                        required>
                 </div>
                 <div>
                     <label for="email" class="block text-black font-bold">Email</label>
                     <input type="email" name="email" id="email" placeholder="Email"
-                        class="w-full mt-2 px-4 py-2 border rounded-lg focus:ring focus:ring-amber-300 outline-none" required>
+                        class="w-full mt-2 px-4 py-2 border rounded-lg focus:ring focus:ring-amber-300 outline-none"
+                        required>
                 </div>
                 <div>
                     <label for="password" class="block text-black font-bold">Password</label>
                     <input type="password" name="password" id="password" placeholder="Password"
-                        class="w-full mt-2 px-4 py-2 border rounded-lg focus:ring focus:ring-amber-300 outline-none" required>
+                        class="w-full mt-2 px-4 py-2 border rounded-lg focus:ring focus:ring-amber-300 outline-none"
+                        required>
                 </div>
                 <div>
                     <label for="conformpassword" class="block text-black font-bold">Confirm Password</label>
                     <input type="password" name="conformpassword" id="conformpassword" placeholder="Confirm Password"
-                        class="w-full mt-2 px-4 py-2 border rounded-lg focus:ring focus:ring-amber-300 outline-none" required>
+                        class="w-full mt-2 px-4 py-2 border rounded-lg focus:ring focus:ring-amber-300 outline-none"
+                        required>
                 </div>
                 <div class="flex items-start">
                     <input type="checkbox" id="terms" name="terms" class="h-4 w-4 border-gray-300 rounded">
                     <label for="terms" class="ml-2 text-sm">
-                        <a href="terms.html" target="_blank" class="text-black font-bold underline">I agree to the Terms and Conditions</a>
+                        <a href="terms.html" target="_blank" class="text-black font-bold underline">I agree to the Terms
+                            and Conditions</a>
                     </label>
                 </div>
                 <button type="submit"
-                    class="w-full bg-amber-500 text-white py-2 rounded-lg font-medium hover:bg-amber-600">Sign Up</button>
+                    class="w-full bg-amber-500 text-white py-2 rounded-lg font-medium hover:bg-amber-600">Sign
+                    Up</button>
             </form>
         </div>
     </main>
@@ -177,6 +211,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </footer>
+
+    <script>
+        const dropdownButton = document.getElementById('dropdownButton');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        dropdownButton.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Close the dropdown if clicked outside
+        window.addEventListener('click', (event) => {
+            if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+    </script>
 
 </body>
 
