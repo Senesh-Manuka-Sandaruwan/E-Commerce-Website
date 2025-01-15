@@ -209,27 +209,27 @@ if (isset($_GET['delete_all'])) {
 
 
    <!-- Footer Section -->
-   <footer class="bg-amber-100 py-8 px-16 text-gray-700 mt-16">
-      <div class="flex items-center justify-between">
-         <div>
-            <img src="assets/logo.webp" alt="Logo" class="w-20 rounded-full">
-            <p class="mt-4">Show us some love & connect with us!</p>
-            <div class="flex space-x-6 mt-4">
-               <img src="assets/facebook-fill.png" alt="Facebook" class="w-6">
-               <img src="assets/instagram-fill.png" alt="Instagram" class="w-6">
-               <img src="assets/linkedin-fill.png" alt="LinkedIn" class="w-6">
-               <img src="assets/youtube-fill.png" alt="Utube" class="w-6">
+   <footer class="bg-amber-100 py-8 px-16 text-gray-700 mt-[6%]">
+        <div class="flex items-center justify-between">
+            <div>
+                <img src="assets/logo.webp" alt="Logo" class="w-20 rounded-full">
+                <p class="mt-4">Show us some love & connect with us!</p>
+                <div class="flex space-x-6 mt-4">
+                    <img src="assets/facebook-fill.png" alt="Facebook" class="w-6">
+                    <img src="assets/instagram-fill.png" alt="Instagram" class="w-6">
+                    <img src="assets/linkedin-fill.png" alt="LinkedIn" class="w-6">
+                    <img src="assets/youtube-fill.png" alt="Utube" class="w-6">
+                </div>
             </div>
-         </div>
-         <div>
-            <p>Crunchy Sweet (PVT) LTD,</p>
-            <p>16, Maharagama, Colombo, <br>Sri Lanka.</p>
-            <p>Phone: 0772517094</p>
-            <p>Email: crunchysweet@gmail.com</p>
-            <p class="text-sm mt-12">&copy; 2024 The Crunchy Sweet All Rights Reserved.</p>
-         </div>
-      </div>
-   </footer>
+            <div>
+                <p>Crunchy Sweet (PVT) LTD,</p>
+                <p>16, Maharagama, Colombo, <br>Sri Lanka.</p>
+                <p>Phone: 0772517094</p>
+                <p>Email: crunchysweet@gmail.com</p>
+                <p class="text-sm mt-12">&copy; 2024 The Crunchy Sweet All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
    <script>
         const dropdownButton = document.getElementById('dropdownButton');

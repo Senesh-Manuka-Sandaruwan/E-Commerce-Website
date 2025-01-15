@@ -35,7 +35,7 @@ if (isset($_POST['add_to_cart'])) {
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/home.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -107,7 +107,7 @@ if (isset($_POST['add_to_cart'])) {
                 class="cart relative flex items-center space-x-2 text-2xl text-white hover:text-yellow-400 ml-8">
                 <img src="assets/shopping-cart-fill.png" alt="Shopping Cart Icon" class="w-8 h-8" />
                 <span
-                class="absolute top-0 right-0 bg-amber-900 text-white text-xs font-semibold px-1 py-0.5 rounded-full"><?php echo $row_count; ?></span>
+                    class="absolute top-0 right-0 bg-amber-900 text-white text-xs font-semibold px-1 py-0.5 rounded-full"><?php echo $row_count; ?></span>
             </a>
         </div>
     </header>
@@ -143,7 +143,7 @@ if (isset($_POST['add_to_cart'])) {
             <div class="max-w-screen-xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-8">
                 <!-- Left Side: Image -->
                 <div class="w-full lg:w-1/2">
-                    <img src="assets/cakeproduct.jpeg" alt="Descriptive Image"
+                    <img src="assets/cake.jpg" alt="Descriptive Image"
                         class="w-full h-auto rounded-lg shadow-lg">
                 </div>
 
@@ -178,7 +178,7 @@ if (isset($_POST['add_to_cart'])) {
 
                         <!-- Product Name as Topic -->
                         <div>
-                            <h2 class="text-2xl font-bold text-gray-800 mb-6"><?php echo $product_name; ?></h2>
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6"><?php echo $product_name; ?></h2>
 
                             <!-- Fetch and Display Forms Below the Topic -->
                             <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
@@ -193,7 +193,7 @@ if (isset($_POST['add_to_cart'])) {
                                             <div class="box">
                                                 <img src="./controllers/uploaded_img/<?php echo htmlspecialchars($fetch_product['product_image']); ?>"
                                                     alt="Product Image" class="w-full h-64 object-cover rounded-md mb-4">
-                                                <h3 class="text-l font-semibold text-gray-800 mb-2">
+                                                <h3 class="text-s font-thinbold text-gray-800 mb-2">
                                                     <?php echo $fetch_product['sub_product_name']; ?>
                                                 </h3>
                                                 <div class="text-lg font-bold text-gray-900 mb-4">
@@ -205,7 +205,7 @@ if (isset($_POST['add_to_cart'])) {
                                                 <input type="hidden" name="product_image"
                                                     value="<?php echo $fetch_product['product_image']; ?>">
                                                 <input type="submit"
-                                                    class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 transition-colors cursor-pointer"
+                                                    class="bg-amber-600 text-white px-6 py-2 rounded hover:bg-amber-900 transition-colors cursor-pointer"
                                                     value="Add to Cart" name="add_to_cart">
                                             </div>
                                         </form>
