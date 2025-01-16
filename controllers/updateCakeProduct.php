@@ -114,9 +114,9 @@ if (isset($message)) {
       <input type="file" name="product_image" accept="image/png, image/jpeg, image/jpg" 
          class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none">
       <input type="submit" value="Update Product" name="update_product" 
-         class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 cursor-pointer">
+         class="w-full bg-amber-800 text-white py-2 rounded-lg hover:bg-amber-900 cursor-pointer">
       <a href="cakeProductController.php" 
-         class="block mt-4 text-center bg-gray-500 text-white py-2 rounded-lg hover:bg-gray-600">Go Back</a>
+         class="block mt-4 text-center bg-amber-500 text-white py-2 rounded-lg hover:bg-amber-600">Go Back</a>
    </form>
 </div>
    

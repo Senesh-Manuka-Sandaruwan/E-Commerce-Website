@@ -96,7 +96,7 @@ if (isset($message)) {
       class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
       <h3 class="text-2xl font-semibold text-center mb-4 uppercase text-gray-800">Update the Sweets Product</h3>
       <select name="product_name" 
-            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
             <option value="Donuts">Donuts</option>
             <option value="Cookies">Cookies</option>
             <option value="Brownies">Brownies</option>
@@ -108,16 +108,16 @@ if (isset($message)) {
          </select>
       <input type="text" name="sub_product_name" value="<?php echo $row['sub_product_name']; ?>" 
          placeholder="Enter the sub product name" 
-         class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+         class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
       <input type="number" min="0" name="product_price" value="<?php echo $row['product_price']; ?>" 
          placeholder="Enter the product price" 
-         class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+         class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
       <input type="file" name="product_image" accept="image/png, image/jpeg, image/jpg" 
          class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none">
       <input type="submit" value="Update Product" name="update_product" 
-         class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 cursor-pointer">
+         class="w-full bg-amber-800 text-white py-2 rounded-lg hover:bg-amber-900 cursor-pointer">
       <a href="sweetsProductController.php" 
-         class="block mt-4 text-center bg-gray-500 text-white py-2 rounded-lg hover:bg-gray-600">Go Back</a>
+         class="block mt-4 text-center bg-amber-500 text-white py-2 rounded-lg hover:bg-amber-600">Go Back</a>
    </form>
 </div>
    

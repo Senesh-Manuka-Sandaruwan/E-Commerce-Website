@@ -102,23 +102,23 @@ if (isset($message)) {
          class="bg-gray-100 p-6 rounded-lg shadow-md w-full max-w-md">
          <h3 class="text-2xl font-semibold text-center mb-4 uppercase text-gray-800">Add a New Chocolate Product</h3>
          <select name="product_name" 
-            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
             <option value="Dairy Milk Chocolates">Dairy Milk Chocolates</option>
             <option value="KitKat Chocolates">KitKat Chocolates</option>
             <option value="Mars Chocolates">Mars Chocolates</option>
             <option value="Twix Chocolates">Twix Chocolates</option>
-            <option value="Twix Chocolates">Snickers Chocolates</option>
-            <option value="Twix Chocolates">Milka Chocolate</option>
-            <option value="Twix Chocolates">Ferrero Rocher Chocolate</option>
-            <option value="Twix Chocolates">Toblerone Chocolate</option>
+            <option value="Snickers Chocolates">Snickers Chocolates</option>
+            <option value="Milka Chocolate">Milka Chocolate</option>
+            <option value="Ferrero Rocher Chocolate">Ferrero Rocher Chocolate</option>
+            <option value="Toblerone Chocolate">Toblerone Chocolate</option>
          </select>
          <input type="text" placeholder="Enter sub product name" name="sub_product_name" 
-            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
          <input type="number" placeholder="Enter product price" name="product_price" 
-            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
          <input type="file" accept="image/png, image/jpeg, image/jpg" name="product_image" 
             class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none">
-         <input type="submit" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 cursor-pointer" 
+         <input type="submit" class="w-full bg-amber-800 text-white py-2 rounded-lg hover:bg-amber-900 cursor-pointer" 
             name="add_product" value="Add Product">
       </form>
    </div>

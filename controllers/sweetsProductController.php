@@ -99,7 +99,7 @@ if (isset($message)) {
          class="bg-gray-100 p-6 rounded-lg shadow-md w-full max-w-md">
          <h3 class="text-2xl font-semibold text-center mb-4 uppercase text-gray-800">Add a New Sweets Product</h3>
          <select name="product_name" 
-            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
             <option value="Donuts">Donuts</option>
             <option value="Cookies">Cookies</option>
             <option value="Brownies">Brownies</option>
@@ -110,12 +110,12 @@ if (isset($message)) {
             <option value="Jar Cakes">Jar Cakes</option>
          </select>
          <input type="text" placeholder="Enter sub product name" name="sub_product_name" 
-            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
          <input type="number" placeholder="Enter product price" name="product_price" 
-            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
          <input type="file" accept="image/png, image/jpeg, image/jpg" name="product_image" 
             class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none">
-         <input type="submit" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 cursor-pointer" 
+         <input type="submit" class="w-full bg-amber-800 text-white py-2 rounded-lg hover:bg-amber-900 cursor-pointer" 
             name="add_product" value="Add Product">
       </form>
    </div>

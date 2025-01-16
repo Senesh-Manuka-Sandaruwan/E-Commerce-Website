@@ -205,7 +205,7 @@ if (isset($_POST['add_to_cart'])) {
                                                 <input type="hidden" name="product_image"
                                                     value="<?php echo $fetch_product['product_image']; ?>">
                                                 <input type="submit"
-                                                    class="bg-amber-600 text-white px-6 py-2 rounded hover:bg-amber-900 transition-colors cursor-pointer"
+                                                    class="bg-amber-800 text-white px-6 py-2 rounded hover:bg-amber-900 transition-colors cursor-pointer"
                                                     value="Add to Cart" name="add_to_cart">
                                             </div>
                                         </form>
