@@ -200,7 +200,7 @@ if (isset($_POST['add_to_cart'])) {
                                                     <?php echo $fetch_product['sub_product_name']; ?>
                                                 </h3>
                                                 <div class="text-lg font-bold text-gray-900 mb-4">
-                                                    LKR.<?php echo $fetch_product['product_price']; ?>/-</div>
+                                                    LKR <?php echo $fetch_product['product_price']; ?>/-</div>
                                                 <input type="hidden" name="sub_product_name"
                                                     value="<?php echo $fetch_product['sub_product_name']; ?>">
                                                 <input type="hidden" name="product_price"

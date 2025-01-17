@@ -3,49 +3,67 @@
 @include './config/Database.php';
 
 if (isset($_POST['order_btn'])) {
-
    $name = $_POST['name'];
    $number = $_POST['number'];
    $email = $_POST['email'];
    $method = $_POST['method'];
-   $address = $_POST['address'];
+   $flat = $_POST['flat'];
+   $street = $_POST['street'];
    $city = $_POST['city'];
    $country = $_POST['country'];
 
    $cart_query = mysqli_query($conn, "SELECT * FROM `cart`");
    $price_total = 0;
+
+   $product_name = []; // Initialize the array to store product names and quantities
+
    if (mysqli_num_rows($cart_query) > 0) {
       while ($product_item = mysqli_fetch_assoc($cart_query)) {
-         $product_name[] = $product_item['name'] . ' (' . $product_item['quantity'] . ') ';
-         $product_price = number_format($product_item['price'] * $product_item['quantity']);
+         // Ensure price and quantity are numeric
+         $price = is_numeric($product_item['price']) ? (float) $product_item['price'] : 0;
+         $quantity = is_numeric($product_item['quantity']) ? (int) $product_item['quantity'] : 0;
+
+         // Calculate product price
+         $product_price = $price * $quantity;
          $price_total += $product_price;
+
+         // Store the product name and quantity
+         $product_name[] = $product_item['name'] . ' (' . $quantity . ')';
       }
-      ;
    }
-   ;
 
    $total_product = implode(', ', $product_name);
-   $detail_query = mysqli_query($conn, "INSERT INTO `order`(name, number, email, method, address, city, country, total_products, total_price) VALUES('$name','$number','$email','$method','$address','$city','$country','$total_product','$price_total')") or die('query failed');
+
+   $detail_query = mysqli_query($conn, "INSERT INTO `order`(name, number, email, method, flat, street, city, country, total_products, total_price) VALUES('$name','$number','$email','$method','$flat','$street','$city','$country','$total_product','$price_total')") or die('Query failed: ' . mysqli_error($conn));
 
    if ($cart_query && $detail_query) {
       echo "
-      <div class='order-message-container'>
-      <div class='message-container'>
-         <h3>thank you for shopping!</h3>
-         <div class='order-detail'>
-            <span>" . $total_product . "</span>
-            <span class='total'> total : $" . $price_total . "/-  </span>
-         </div>
-         <div class='customer-details'>
-            <p> your name : <span>" . $name . "</span> </p>
-            <p> your number : <span>" . $number . "</span> </p>
-            <p> your email : <span>" . $email . "</span> </p>
-            <p> your address : <span>" . $address . "," . $city . ", " . $country . "</span> </p>
-            <p> your payment mode : <span>" . $method . "</span> </p>
-            <p>(*pay when product arrives*)</p>
-         </div>
-            <a href='products.php' class='btn'>continue shopping</a>
-         </div>
+      <div class='fixed top-0 left-0 h-screen overflow-y-scroll overflow-x-hidden p-8 flex items-center justify-center z-[1100] bg-gray-800 w-full'>
+          <div class='w-[50rem] bg-white rounded-lg p-8 text-center'>
+              <h3 class='text-3xl font-bold text-black mb-6'>Thank You For Shopping With Us!</h3>
+              <div class='bg-gray-200 rounded-lg p-4 my-4'>
+                  <span class='bg-white rounded-lg text-black text-l inline-block px-6 py-3 mx-2'>" . $total_product . "</span>
+                  <span class='block bg-red-500 text-white rounded-lg text-2xl px-6 py-3 mx-2'>Total: LKR. " . $price_total . "/-</span>
+              </div>
+              <div class='mt-6 mb-4'>
+                  <p class='text-l text-black py-2'>Your Name: <span class='text-blue-500 px-1'>" . htmlspecialchars($name) . "</span></p>
+                  <p class='text-l text-black py-2'>Your Number: <span class='text-blue-500 px-1'>" . htmlspecialchars($number) . "</span></p>
+                  <p class='text-l text-black py-2'>Your Email: <span class='text-blue-500 px-1'>" . htmlspecialchars($email) . "</span></p>
+                  <p class='text-l text-black py-2'>Your Address: <span class='text-blue-500 px-1'>" . htmlspecialchars($flat) . ", " . htmlspecialchars($street) . ", " . htmlspecialchars($city) . ", " . htmlspecialchars($country) . "</span></p>
+                  <p class='text-l text-black py-2'>Your Payment Mode: <span class='text-blue-500 px-1'>" . htmlspecialchars($method) . "</span></p>
+                  <p class='text-xl py-2 text-green-600 font-thinbold'>**PAY WHEN PRODUCTS ARRIVES**</p>
+              </div>
+              <div>
+                  <h1 class='inline-block text-black text-xl font-bold px-6 py-3'>Continue Shopping >>></h1>
+                  <a href='cakeProducts.php' class='inline-block bg-amber-200 text-black px-6 py-3 rounded-lg hover:bg-amber-300'>Cakes</a>
+                  <a href='chocoProducts.php' class='inline-block bg-amber-200 text-black px-6 py-3 rounded-lg hover:bg-amber-300'>Chocolates</a>
+                  <a href='sweetsProducts.php' class='inline-block bg-amber-200 text-black px-6 py-3 rounded-lg hover:bg-amber-300'>Sweets</a>
+              </div>
+              <div>
+                  <a href='index.php' class='inline-block bg-amber-800 text-white px-20 py-3 rounded-lg hover:bg-amber-900 mt-4'>Go home</a>
+              </div>
+              
+          </div>
       </div>
       ";
    }
@@ -53,6 +71,7 @@ if (isset($_POST['order_btn'])) {
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,31 +89,31 @@ if (isset($_POST['order_btn'])) {
    <link rel="stylesheet" href="css/style.css">
    <script src="https://cdn.tailwindcss.com"></script>
    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'amber': {
-                            '50': '#fffbeb',
-                            '100': '#fef3c7',
-                            '200': '#fde68a',
-                            '300': '#fcd34d',
-                            '400': '#fbbf24',
-                            '500': '#f59e0b',
-                            '600': '#d97706',
-                            '700': '#b45309',
-                            '800': '#92400e',
-                            '900': '#78350f',
-                            '950': '#451a03',
-                        },
-                    },
-
-                },
+      tailwind.config = {
+         theme: {
+            extend: {
+               colors: {
+                  'amber': {
+                     '50': '#fffbeb',
+                     '100': '#fef3c7',
+                     '200': '#fde68a',
+                     '300': '#fcd34d',
+                     '400': '#fbbf24',
+                     '500': '#f59e0b',
+                     '600': '#d97706',
+                     '700': '#b45309',
+                     '800': '#92400e',
+                     '900': '#78350f',
+                     '950': '#451a03',
+                  },
+               },
 
             },
-        }
 
-    </script>
+         },
+      }
+
+   </script>
 
 </head>
 
@@ -140,7 +159,7 @@ if (isset($_POST['order_btn'])) {
             class="cart relative flex items-center space-x-2 text-2xl text-white hover:text-yellow-400 ml-8">
             <img src="assets/shopping-cart-fill.png" alt="Shopping Cart Icon" class="w-8 h-8" />
             <span
-            class="absolute top-0 right-0 bg-amber-900 text-white text-xs font-semibold px-1 py-0.5 rounded-full"><?php echo $row_count; ?></span>
+               class="absolute top-0 right-0 bg-amber-900 text-white text-xs font-semibold px-1 py-0.5 rounded-full"><?php echo $row_count; ?></span>
          </a>
       </div>
    </header>
@@ -209,8 +228,13 @@ if (isset($_POST['order_btn'])) {
                   </select>
                </div>
                <div class="inputBox flex-1 min-w-[250px]">
-                  <label class="block text-lg font-medium text-gray-800 mb-2">Your Address</label>
-                  <input type="text" placeholder="Address" name="street" required
+                  <label class="block text-lg font-medium text-gray-800 mb-2">Your Flat No</label>
+                  <input type="text" placeholder="e.g. flat no" name="flat" required
+                     class="w-full border border-gray-300 rounded-lg p-3 text-lg text-gray-800 focus:ring-2 focus:ring-amber-500">
+               </div>
+               <div class="inputBox flex-1 min-w-[250px]">
+                  <label class="block text-lg font-medium text-gray-800 mb-2">Your Street</label>
+                  <input type="text" placeholder="e.g. street name" name="street" required
                      class="w-full border border-gray-300 rounded-lg p-3 text-lg text-gray-800 focus:ring-2 focus:ring-amber-500">
                </div>
                <div class="inputBox flex-1 min-w-[250px]">
@@ -255,20 +279,20 @@ if (isset($_POST['order_btn'])) {
    </footer>
 
    <script>
-        const dropdownButton = document.getElementById('dropdownButton');
-        const dropdownMenu = document.getElementById('dropdownMenu');
+      const dropdownButton = document.getElementById('dropdownButton');
+      const dropdownMenu = document.getElementById('dropdownMenu');
 
-        dropdownButton.addEventListener('click', () => {
-            dropdownMenu.classList.toggle('hidden');
-        });
+      dropdownButton.addEventListener('click', () => {
+         dropdownMenu.classList.toggle('hidden');
+      });
 
-        // Close the dropdown if clicked outside
-        window.addEventListener('click', (event) => {
-            if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.classList.add('hidden');
-            }
-        });
-    </script>
+      // Close the dropdown if clicked outside
+      window.addEventListener('click', (event) => {
+         if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.add('hidden');
+         }
+      });
+   </script>
 
 
    <!-- custom js file link  -->
