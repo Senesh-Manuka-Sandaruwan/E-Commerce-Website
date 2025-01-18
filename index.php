@@ -93,6 +93,13 @@
     <main class="">
         <section class="w-full h-auto">
             <img src="assets/homebg.jpg" alt="backgruond Image" class="w-full object-cover">
+            <div class="absolute bottom-4 left-4">
+                <h1 class="text-white text-xl md:text-9xl font-bold drop-shadow-lg">
+                    WELCOME
+                    <Br></Br> 
+                    TO CRUNCHY SWEETS
+                </h1>
+            </div>
         </section>
 
         <!-- Categories Section -->
@@ -100,7 +107,6 @@
             <!-- Cakes Section -->
             <h2 class="text-3xl font-bold mb-6 text-gray-700">Cakes</h2>
             <div class="flex items-center space-x-6">
-
                 <div class="grid grid-cols-4 gap-20">
                     <div class="text-center">
                         <a href="cakeProducts.php"><img src="assets/regular_cake_1.webp" alt="Regular Cakes"

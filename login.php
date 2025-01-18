@@ -143,7 +143,7 @@ if (isset($_POST['login'])) {
                     class="w-full bg-amber-500 text-white py-2 rounded-lg font-medium hover:bg-amber-600">Login</button>
             </form>
             <div class="mt-4 text-center">
-                <p>Don't have an account? <a href="signup.php" class="text-amber-600">Sign Up</a></p>
+                <p>Don't have an account? <a href="signup.php" class="text-amber-800 font-bold">Sign Up</a></p>
             </div>
         </div>
     </main>

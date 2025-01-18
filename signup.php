@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 Us</a>
         </nav>
         <div class="flex space-x-6">
-            <a href="login.php"><img src="assets/user-fill.png" alt="User Icon" class="w-6 h-6"></a>
+            <a href="login.php"><img src="assets/user-fill.png" alt="User Icon" class="w-8 h-8"></a>
             <?php
             $select_rows = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
             $row_count = mysqli_num_rows($select_rows);
