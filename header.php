@@ -62,7 +62,7 @@
 
         
         <div>
-        <a href="login.php"><button class="text-white font-medium py-2 px-4 bg-amber-800 rounded hover:bg-amber-900 transition-colors">
+        <a href="..//login.php"><button class="text-white font-medium py-2 px-4 bg-amber-800 rounded hover:bg-amber-900 transition-colors">
             Log Out
         </button></a>
         </div>

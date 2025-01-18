@@ -2,6 +2,16 @@
 
 @include './config/Database.php';
 
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    $login_url = 'login.php'; // Define the login page URL
+} else {
+    $checkout_url = 'checkout.php'; // Define the checkout page URL
+}
+
+
 if (isset($_POST['update_update_btn'])) {
    $update_value = $_POST['update_quantity'];
    $update_id = $_POST['update_quantity_id'];
@@ -199,7 +209,7 @@ if (isset($_GET['delete_all'])) {
          </table>
 
          <div class="text-center mt-8">
-            <a href="checkout.php"
+            <a href="login.php?redirect=checkout.php"
                class="px-6 py-3 bg-amber-800 text-white rounded shadow-md hover:bg-amber-900 disabled:opacity-50 <?= ($grand_total > 1) ? '' : 'disabled'; ?>">
                Proceed to Checkout
             </a>

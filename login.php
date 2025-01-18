@@ -24,7 +24,7 @@ if (isset($_POST['login'])) {
             if ($user['role'] == 'admin') {
                 header("Location: controllers/cakeProductController.php"); // Admin page
             } else {
-                header("Location: index.php"); // Regular user homepage
+                header("Location: checkout.php"); // Regular user homepage
             }
         } else {
             $error_message = "Invalid password.";
