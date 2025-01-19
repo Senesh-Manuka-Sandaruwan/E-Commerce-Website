@@ -1,5 +1,6 @@
 <?php
 @include './config/Database.php';
+session_start();
 
 // Handle login process
 if (isset($_POST['login'])) {
@@ -15,17 +16,12 @@ if (isset($_POST['login'])) {
         // Check if the password matches
         if (password_verify($password, $user['password'])) {
             // Set session variables for logged in user
-            session_start();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['email'] = $user['email'];
-            $_SESSION['role'] = $user['role'];
-
-            // Redirect to the homepage or dashboard based on user role
-            if ($user['role'] == 'admin') {
-                header("Location: controllers/cakeProductController.php"); // Admin page
-            } else {
-                header("Location: checkout.php"); // Regular user homepage
-            }
+            
+            // Redirect to checkout page
+            header("Location: checkout.php");
+            exit();
         } else {
             $error_message = "Invalid password.";
         }
@@ -33,6 +29,7 @@ if (isset($_POST['login'])) {
         $error_message = "Email not found.";
     }
 }
+
 ?>
 
 <!DOCTYPE html>

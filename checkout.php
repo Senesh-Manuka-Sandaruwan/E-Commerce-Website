@@ -37,6 +37,8 @@ if (isset($_POST['order_btn'])) {
    $detail_query = mysqli_query($conn, "INSERT INTO `order`(name, number, email, method, flat, street, city, country, total_products, total_price) VALUES('$name','$number','$email','$method','$flat','$street','$city','$country','$quantity','$price_total')") or die('Query failed: ' . mysqli_error($conn));
 
    if ($cart_query && $detail_query) {
+      // Clear the cart after successful order
+      mysqli_query($conn, "DELETE FROM `cart`");
       echo "
       <div class='fixed top-0 left-0 h-screen overflow-y-scroll overflow-x-hidden p-8 flex items-center justify-center z-[1100] bg-gray-800 w-full'>
           <div class='w-[50rem] bg-white rounded-lg p-8 text-center'>
